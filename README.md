@@ -1,4 +1,4 @@
----
+<!---
 title: Intermediate jQuery
 type: lesson
 duration: "1:25"
@@ -6,70 +6,61 @@ creator:
     name: Jim Clark
     city: LA
 competencies: Front-end intro
----
+--->
+
+<!--10:10 5 minutes-->
 
 # Intermedite jQuery
 
 ### Objectives
 *After this lesson, students will be able to:*
-- Describe event bubbling, delegation and how to bind events with jQuery
-- Apply jQuery to manipulate, add, and remove DOM elements
-- Add event listeners for standard events - click, mouse, keydown - and custom events and respond with an action
-- Capture data from specific events and iterate on or manipulate the data
-- Work with timer events within the context of the browser
+- **Describe** event bubbling, delegation and how to bind events with jQuery
+- **Apply** jQuery to manipulate, add, and remove DOM elements
+- **Add** event listeners for standard events - click, mouse, keydown - and custom events and respond with an action
+- **Capture** data from specific events and iterate on or manipulate the data
+- **Work** with timer events within the context of the browser
 
 ### Preparation
 *Before this lesson, students should already be able to:*
 
-- Call JavaScript/jQuery in your HTML file
-- Describe jQuery and it's use in manipulating the DOM
-- Write simple jQuery to manipulate the DOM
-- Read this: [Manipulating Elements - jQuery Learning Center](http://learn.jquery.com/using-jquery-core/manipulating-elements/)
+- **Call** JavaScript/jQuery in your HTML file
+- **Describe** jQuery and it's use in manipulating the DOM
+- **Write** simple jQuery to manipulate the DOM
 
-## Page Setup - Codealong (10 mins)
+<!--10:15 10 minutes -->
+
+## Page Setup - Codealong
 
 #### Create Folder and Files
 
-Welcome back to jQuery!  Since we've had a proper introduction, let's start building and setup our own `index.html` page and `app.js` file. With Terminal in your working directory where you keep your code:
+Welcome back to jQuery!  Since we've had a proper introduction, let's start building our own `index.html` page and `app.js` file. With Terminal in your working directory where you keep your code:
 
-```bash
-mkdir first_jquery
-cd first_jquery
-touch index.html
-mkdir js
-touch js/app.js
-subl .
-```
+- Create a directory called `first_jquery`
+- Navigate inside that directory
+- `touch` your HTML file
+- Make a `js` directory
+- `touch` your JS file, and make sure it is inside your `js` directory
+- Open the current directory with Sublime
 
 #### Boilerplate
 
-Create your HTML boilerplate using [Emmet](http://emmet.io/)). Include the jQuery library from the CDN and your `app.js` after it.  We'll also include the CDN of something called Bootstrap, a CSS framework that we will learn more about later, but for now, think of it as a whole bunch of CSS prewritten for us that we can use by calling it.  It's helpful now because it will make our simple demo easier on the eyes:
+- Create your HTML boilerplate. 
+- Include the jQuery library from the CDN and your `app.js` after it.  
+- We'll also include the CDN of something called Bootstrap, a CSS framework that we will learn more about later, but for now, think of it as a whole bunch of CSS prewritten for us that we can use by calling it.  It's helpful now because it will make our simple demo easier on the eyes:
 
-> Note: You might want to quickly show them Bootstrap's interface and a sample of the code that's available.
+<!-- Note: You might want to quickly show them Bootstrap's interface and a sample of the code that's available.-->
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome Back to jQuery</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/app.js"></script>
-</head>
-<body>
-
-</body>
-</html>
 ```
 
 #### Starting HTML
 
-We are going to display a list homes for sell in Lake Arrowhead. Here's some HTML to get us started - replace the existing `<body>` tags with the following:
+We are going to display a list of homes for sale in Longmont. Here's some HTML to get us started - replace the existing `<body>` tags with the following:
 ```html
 <body class="container">
 
-    <h1 class="jumbotron">Lake Arrowhead Homes For Sale</h1>
+    <h1 class="jumbotron">Longmont Homes For Sale</h1>
 
     <table id="homes" class="table">
         <thead>
@@ -337,3 +328,7 @@ var newHomes = [
 
 - Describe how the event delegation syntax differs from the standard syntax.
 - Explain how to ensure your jQuery doesn't run until after the DOM loads in the browser.
+
+## Resources:
+
+- [Manipulating Elements - jQuery Learning Center](http://learn.jquery.com/using-jquery-core/manipulating-elements/)
