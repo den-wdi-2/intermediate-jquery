@@ -14,7 +14,7 @@ competencies: Front-end intro
 
 <!--10:10 5 minutes-->
 
-# Intermedite jQuery
+# Intermediate jQuery
 
 ### Objectives
 *After this lesson, students will be able to:*
