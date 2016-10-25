@@ -8,6 +8,10 @@ creator:
 competencies: Front-end intro
 --->
 
+<!--Hook: Raise your hand if you have a car.  Keep your hand up if you know how to fill up the tank.  Keep your hand up if you know how to change your oil.  Keep your hand up if you know how to replace your transmission. Just like with cars, there are a lot of these stopping points in coding.  Nobdody knows everything.  Today, we're going to move up to and a little beyond the "oil changing point of jQuery".  So yeah, it might get messy.-->
+
+<!--Make a point throughout this class to show the code that devs need on the projector, and remind them not to copy-paste from sources if they can avoid it. -->
+
 <!--10:10 5 minutes-->
 
 # Intermedite jQuery
@@ -55,6 +59,8 @@ Welcome back to jQuery!  Since we've had a proper introduction, let's start buil
 ```
 
 #### Starting HTML
+
+<!--Demo this without copy-paste, and ask them to do the same -->
 
 We are going to display a list of homes for sale in Longmont. Here's some HTML to get us started - replace the existing `<body>` tags with the following:
 ```html
@@ -113,19 +119,27 @@ Since our script is in the `<head>`, it will be parsed before the DOM. If our co
 ```js
 $(document).ready(function() {
 	alert("Everything is ready, let's do this");
+	/* Javascript
+	goes
+	here */
 });
 
 // or, the shortcut version
 $(function(){
 	alert("Everything is ready, let's do this");
+	/* Javascript
+	goes
+	here */	
 });
 ```
 
 We're all set to get started. In Sublime, right-click anywhere on `index.html` in the editor and select `Open in Browser`.
 
-Your page should load and the alert appear.
+Your page should load and the alert should appear.
 
-## Adding & Removing Classes - Demo (5 mins)
+<!--10:25 5 minutes -->
+
+## Adding & Removing Classes - Demo
 
 It looks like our designer styled our _Add Home_ button with Bootstrap's `btn-danger` class making it red. We may be code junkies, but even we know that the button should probably be a color other than red - let's make it green instead.
 
@@ -140,13 +154,15 @@ $(function() {
 ```
 That's better!
 
-## Add and Remove Classes - Independent Practice (5 mins)
+## Add and Remove Classes - Independent Practice
 
-Your turn! Add a class named "text-center" to the `<h1>` tag.
+Your turn! After you change the class to `btn-success`, add a class named "text-center" to the `<h1>` tag.
 
-## Creating and Modifying Elements - Codealong (10 mins)
+<!--10:30 10 minutes -->
 
-jQuery makes creating new elements easy. Lets add an anchor tag (link) to our page that takes our users to Zillow's site.
+## Creating and Modifying Elements - Codealong
+
+jQuery makes creating new elements easy. Let's add an anchor tag (link) to our page that takes our users to Zillow's site.
 
 The jQuery function isn't just for selecting elements - it can create them! Just give it a string holding the HTML:
 
@@ -195,18 +211,21 @@ Nice!
 
 We also can use the `removeAttr()` method to remove an attribute.
 
-## Find the value of an attribute - Independent Practice (5 mins)
+<!--Timer for 2 minutes -->
+
+## Find the value of an attribute - Independent Practice
 
 How do you think we would retrieve the value of an attribute?  Pair up, get on the web and find out, and then, `console.log` the value of the link's `href` attribute.
 
+<!--10:40 10 minutes -->
 
-## Adding Event Listeners - Codealong (10 mins)
+## Adding Event Listeners - Codealong
 
-When our shiny green _Add Home_ button is clicked, we want to add one of the homes from an array that we will preloaded with a few homes.
+When our shiny green _Add Home_ button is clicked, we want to add one of the homes from an array that we will preload with a few homes.
 
 jQuery has several ways to add event listeners. We will look at a couple of them in this lesson.
 
-Here is a straight forward way to add an event listener to our _Add Home_ button:
+Here is a straight-forward way to add an event listener to our _Add Home_ button:
 
 ```js
 $('#addHome').click(function(evt){
@@ -214,6 +233,9 @@ $('#addHome').click(function(evt){
 	console.log(this);
 });
 ```
+
+<!--CFU: Think-pair-share for below -->
+
 Refresh the page and open the console to see what the `evt` argument (jQuery's _event_ object) passed in by jQuery looks like and what `this` is set to.
 
 jQuery's _event_ object can come in handy, especially when listening to mouse events. It is this object for example that would make writing a drawing or paint application possible.
@@ -225,23 +247,26 @@ $('#addHome').on('click', function() {
 	console.log(this);
 });
 ```
+
 In all cases, note that if you don't need to use the _event_ argument, you don't have to include it.
 
 [These docs](http://api.jquery.com/category/events/) have a complete list of event methods.
 
 In order to stay on the topic of event listeners, we'll write the code to insert a home a bit later.
 
-#### Event Delegation - Intro (10 mins)
+<!--10:50 5 minutes -->
+
+#### Event Delegation - Intro
 
 _Event delegation_ allows us to attach a single event listener to an element that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future.
 
 This is possible courtesy of something known as _event bubbling_, implemented in all major browsers. With event bubbling, un-handled events "bubble up" the DOM until a listener for that type of event is found. If there is no listener, so be it.
 
-Doesn't this like a sound perfect approach for our _Remove_ buttons on each home? One event listener, regardless of how many homes in our table?! One event listener for all of the current rows in our table now, and for ones that we add later?! Yes, thanks to event delegation!
+Doesn't this sound like a perfect approach for our _Remove_ buttons on each home? One event listener, regardless of how many homes in our table?! One event listener for all of the current rows in our table now, and for ones that we add later?! Yes, thanks to event delegation!
 
 We need to decide which ancestor element to use.<br>
 
-> Note: Identify the ancestor elements of our `<tr>` tags with the class.
+> Note: Identify the ancestor elements of our `<tr>` tags with the button.
 
 Any ancestor element would work, but as they say, closer is usually better.
 
@@ -255,9 +280,11 @@ function removeHome() {
 }
 ```
 
-> Note: Discuss the differences about the way we used the `on()` method that made it perform event delegation?
+<!-- Note: Discuss the differences about the way we used the `on()` method that made it perform event delegation. -->
 
-## More DOM practice - Codealong (5 mins)
+<!--10:55 5 minutes -->
+
+## More DOM practice - Codealong
 
 ### Removing Elements
 
@@ -274,7 +301,7 @@ No, it can't be that easy!
 #### Removing Elements "Gracefully"
 
 Currently, the sudden disappearance of the home's row is a little harsh. jQuery has some nice built-in [effects](http://learn.jquery.com/effects/intro-to-effects/) to help us out:
-
+<!-- Leave this up, so people aren't tempted to copy-and-paste
 ```js
 function removeHome() {
 	$(this).fadeOut(1000, function() {
@@ -282,37 +309,39 @@ function removeHome() {
 	});
 }
 ```
+-->
+
 Much better!
 
-## Traversing the DOM - Demo (5 mins)
+## Traversing the DOM - Demo
 
 jQuery has [several methods to traverse the DOM](https://api.jquery.com/category/traversing/). However, to complete the next exercise, we need to know about the `children()` method.
 
 We can use the `children()` method to select direct children (vs. all descendants) of an element.
 
-For example, if we wanted to set the color of the text of our _Address_ and _Price_ cells in table header row blue and green respectively, we could do this:
+For example, if we wanted to set the color of the text of our _Address_ and _Price_ cells in the table header row blue and green respectively, we could do this:
 
 ```js
 var cells = $('#homes thead tr').children();
 cells.eq(0).css('color', 'blue');
 cells.eq(4).css('color', 'green');
 ```
+
 Note that the `children()` method can be passed in an additional selector string for further filtering.
 
-## Add New Homes - Independent Practice (15 mins)
+<!--11:00 15 minutes -->
+
+## Add New Homes - Independent Practice
 
 Now for what would appear to be our biggest challenge. However, you've already seen everything you need to make this happen! jQuery's there for you.
 
-First, copy this array of new home data to your script:
+First, create an array of new home data in your script:
 
-```js
-var newHomes = [
-    {address: "27569 Cedarwood Drive", sf: "2,535", bedrooms: 3, baths: 2.5, price: "$496,500"},
-    {address: "316 Annandale Drive", sf: "1,326", bedrooms: 4, baths: 2, price: "$275,000"},
-    {address: "251 Grandview Road", sf: "3,800", bedrooms: 3, baths: 2, price: "$699,900"},
-    {address: "28571 Manitoba", sf: "2,960", bedrooms: 4, baths: 3.5, price: "$775,000"}
-];
-```
+- Create a blank array called `newHomes`
+- Push a house object into it with
+  - `address` propery of "123 Sesame Street", `sf` property of "1,234", `bedrooms` property of 3, `baths` property of 2, `price` property of "$280,000"
+- Push another house object into it with
+  - `address` propery of "345 Plaza Sesamo", `sf` property of "4,321", `bedrooms` property of 5, `baths` property of 3.5, `price` property of "$680,000"
 
 - Use the home data to "fill" in the cells of newly created rows.
 - It always helps to pseudocode (write the major coding steps in English).
@@ -321,12 +350,14 @@ var newHomes = [
 **Bonus**:
 
 - If you have time, include a check for there being no more homes in the array to add and disable the _Add Home_ button.
-- Add a button, that when clicked, restore all previously removed homes and appends them to the bottom of the table.
+- Add a button that, when clicked, restores all previously removed homes and appends them to the bottom of the table.
   - Hint: Take a look at the "Removing Elements" section in [these docs](http://learn.jquery.com/using-jquery-core/manipulating-elements/).
 
-## Conclusion (5 mins)
+<!--11:15 5 minutes -->
 
-- Describe how the event delegation syntax differs from the standard syntax.
+## Conclusion
+
+- Describe how the event delegation syntax differs from the standard event handler syntax.
 - Explain how to ensure your jQuery doesn't run until after the DOM loads in the browser.
 
 ## Resources:
