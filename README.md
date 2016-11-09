@@ -165,7 +165,7 @@ jQuery makes creating new elements easy. Let's add an anchor tag (link) to our p
 The jQuery function isn't just for selecting elements - it can create them! Just give it a string holding the HTML:
 
 ```js
-var $newLink = $( '<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow.com<a>' );
+var $newLink = $( '<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow.com</a>' );
 ```
 
 #### Adding the Element to the DOM
@@ -210,6 +210,8 @@ Nice!
 We also can use the `removeAttr()` method to remove an attribute.
 
 <!--Timer for 2 minutes -->
+
+<!--Got to here ~11:30 -->
 
 ## Find the value of an attribute - Independent Practice
 
