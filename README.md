@@ -8,6 +8,8 @@ creator:
 competencies: Front-end intro
 --->
 
+<!--HTML and typos just plaguing the class on this, only got halfway through by 11:30 -->
+
 <!--Hook: Raise your hand if you have a car.  Keep your hand up if you know how to fill up the tank.  Keep your hand up if you know how to change your oil.  Keep your hand up if you know how to replace your transmission. Just like with cars, there are a lot of these stopping points in coding.  Nobdody knows everything.  Today, we're going to move up to and a little beyond the "oil changing point of jQuery".  So yeah, it might get messy.-->
 
 <!--Make a point throughout this class to show the code that devs need on the projector, and remind them not to copy-paste from sources if they can avoid it. -->
@@ -163,7 +165,7 @@ jQuery makes creating new elements easy. Let's add an anchor tag (link) to our p
 The jQuery function isn't just for selecting elements - it can create them! Just give it a string holding the HTML:
 
 ```js
-var newLink = $( '<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow.com<a>' );
+var $newLink = $( '<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow.com<a>' );
 ```
 
 #### Adding the Element to the DOM
