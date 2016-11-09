@@ -31,14 +31,15 @@ competencies: Front-end intro
 - **Describe** jQuery and it's use in manipulating the DOM
 - **Write** simple jQuery to manipulate the DOM
 
-<!--10:15 10 minutes -->
+<!--10:15 15 minutes -->
 
 ## Page Setup - Codealong
 
 #### Create Folder and Files
 
-Welcome back to jQuery!  Since we've had a proper introduction, let's start building our own `index.html` page and `app.js` file. With Terminal in your working directory where you keep your code:
+Welcome back to jQuery!  Since we've had a proper introduction, let's start building our own `index.html` page and `app.js` file. In Terminal:
 
+- Navigate to your working directory where you keep your code
 - Create a directory called `first_jquery`
 - Navigate inside that directory
 - `touch` your HTML file
@@ -49,14 +50,15 @@ Welcome back to jQuery!  Since we've had a proper introduction, let's start buil
 #### Boilerplate
 
 - Create your HTML boilerplate. 
-- Include the jQuery library from the CDN and your `app.js` after it.  
+- Include the jQuery library from a CDN and your `app.js` after it.  
+ - **Hint**: You can Google "jQuery CDN" to find a good link.
 - We'll also include the CDN of something called Bootstrap, a CSS framework that we will learn more about later, but for now, think of it as a whole bunch of CSS prewritten for us that we can use by calling it.  It's helpful now because it will make our simple demo easier on the eyes:
-
-<!-- Note: You might want to quickly show them Bootstrap's interface and a sample of the code that's available.-->
 
 ```html
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 ```
+
+<!--Make sure devs stop here -->
 
 #### Starting HTML
 
@@ -96,14 +98,6 @@ We are going to display a list of homes for sale in Longmont. Here's some HTML t
                 <td>$990,000</td>
                 <td><button class="btn btn-xs btn-danger">Remove</button></td>
             </tr>
-            <tr>
-                <td>1228 Klondike Drive</td>
-                <td>2,158</td>
-                <td>4</td>
-                <td>2.5</td>
-                <td>$400,000</td>
-                <td><button class="btn btn-xs btn-danger">Remove</button></td>
-            </tr>
         </tbody>
     </table>
 	<br>
@@ -137,11 +131,13 @@ We're all set to get started. In Sublime, right-click anywhere on `index.html` i
 
 Your page should load and the alert should appear.
 
-<!--10:25 5 minutes -->
+<!--10:30 5 minutes -->
+
+<!--Half-mast -->
 
 ## Adding & Removing Classes - Demo
 
-It looks like our designer styled our _Add Home_ button with Bootstrap's `btn-danger` class making it red. We may be code junkies, but even we know that the button should probably be a color other than red - let's make it green instead.
+It looks like our designer styled our _Add Home_ button with Bootstrap's `btn-danger` class making it red. We know that the button should probably be a color other than red - let's make it green instead.
 
 Change the button from red to green by removing the `btn-danger` class and adding the `btn-success` class with jQuery:
 
@@ -158,7 +154,7 @@ That's better!
 
 Your turn! After you change the class to `btn-success`, add a class named "text-center" to the `<h1>` tag.
 
-<!--10:30 10 minutes -->
+<!--10:35 10 minutes -->
 
 ## Creating and Modifying Elements - Codealong
 
@@ -217,7 +213,7 @@ We also can use the `removeAttr()` method to remove an attribute.
 
 How do you think we would retrieve the value of an attribute?  Pair up, get on the web and find out, and then, `console.log` the value of the link's `href` attribute.
 
-<!--10:40 10 minutes -->
+<!--10:45 10 minutes -->
 
 ## Adding Event Listeners - Codealong
 
@@ -254,7 +250,7 @@ In all cases, note that if you don't need to use the _event_ argument, you don't
 
 In order to stay on the topic of event listeners, we'll write the code to insert a home a bit later.
 
-<!--10:50 5 minutes -->
+<!--10:55 5 minutes -->
 
 #### Event Delegation - Intro
 
@@ -282,7 +278,7 @@ function removeHome() {
 
 <!-- Note: Discuss the differences about the way we used the `on()` method that made it perform event delegation. -->
 
-<!--10:55 5 minutes -->
+<!--11:00 10 minutes -->
 
 ## More DOM practice - Codealong
 
@@ -329,7 +325,7 @@ cells.eq(4).css('color', 'green');
 
 Note that the `children()` method can be passed in an additional selector string for further filtering.
 
-<!--11:00 15 minutes -->
+<!--11:10 15 minutes -->
 
 ## Add New Homes - Independent Practice
 
@@ -353,7 +349,7 @@ First, create an array of new home data in your script:
 - Add a button that, when clicked, restores all previously removed homes and appends them to the bottom of the table.
   - Hint: Take a look at the "Removing Elements" section in [these docs](http://learn.jquery.com/using-jquery-core/manipulating-elements/).
 
-<!--11:15 5 minutes -->
+<!--11:25 5 minutes -->
 
 ## Conclusion
 
